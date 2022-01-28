@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="windows-1251" ?>
+<dialog>
+	<phrase id="text1">
+		<text>Текст1</text>
+	</phrase>
+	<phrase id="text2">
+		<text>Текст2</text>
+	</phrase>
+	<phrase id="text3">
+		<text>Текст3</text>
+	</phrase>
+	<phrase id="choice1">
+		<text>Выбор1</text>
+	</phrase>
+	<phrase id="choice2">
+		<text>Выбор2</text>
+	</phrase>
+
+	<phrase id="text4">
+		<text>Текст4</text>
+	</phrase>
+	<phrase id="text5">
+		<text>Текст5</text>
+	</phrase>
+	<phrase id="choice3">
+		<text>Выбор3</text>
+	</phrase>
+	<phrase id="choice4">
+		<text>Выбор4</text>
+	</phrase>
+
+	<phrase id="text6">
+		<text>Текст6</text>
+	</phrase>
+	<phrase id="text7">
+		<text>Текст7</text>
+	</phrase>
+	<phrase id="choice5">
+		<text>Выбор5</text>
+	</phrase>
+	<phrase id="choice6">
+		<text>Выбор6</text>
+	</phrase>
+</dialog>

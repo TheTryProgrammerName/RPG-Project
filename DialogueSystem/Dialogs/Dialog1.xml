@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<dialog>
+	<block id="block1">
+		<phrases>
+			<phrase>
+				<text>text1</text>
+			</phrase>
+			<phrase>
+				<text>text2</text>
+			</phrase>
+			<phrase>
+				<text>text3</text>
+			</phrase>
+		</phrases>
+		
+		<choices> 
+			<choice>
+				<text>choice1</text>
+				<next>block2</next>
+			</choice>
+			<choice>
+				<text>choice2</text>
+				<next>block3</next>
+			</choice>
+		</choices>
+	</block>
+	
+	<block id="block2">
+		<phrases>
+			<phrase>
+				<text>text4</text>
+			</phrase>
+			<phrase>
+				<text>text5</text>
+			</phrase>
+		</phrases>
+		
+		<choices> 
+			<choice>
+				<text>choice3</text>
+				<next>block2</next>
+			</choice>
+			<choice>
+				<text>choice4</text>
+				<next>block3</next>
+			</choice>
+		</choices>
+	</block>
+	
+	<block id="block3">
+		<phrases>
+			<phrase>
+				<text>text6</text>
+			</phrase>
+			<phrase>
+				<text>text7</text>
+			</phrase>
+		</phrases>
+		
+		<choices> 
+			<choice>
+				<text>choice5</text>
+				<next>block2</next>
+			</choice>
+			<choice>
+				<text>choice6</text>
+				<next>block3</next>
+			</choice>
+		</choices>
+	</block>
+</dialog>

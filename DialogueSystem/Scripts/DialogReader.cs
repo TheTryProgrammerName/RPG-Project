@@ -14,13 +14,11 @@ namespace DialogueSystem
             List<XmlElement> Blocks = SortFile(DialogFile);
 
             Dialog Dialog = new Dialog();
-            Dialog.Create();
 
             for (int i = 0; i < Blocks.Count; i++)
             {
                 DialogBlock dialogBlock = new DialogBlock();
-                dialogBlock.Create();
-                dialogBlock.AddID(GetBlockID(Blocks[i]));
+                dialogBlock.ID = GetBlockID(Blocks[i]);
 
                 List<XmlElement> SortBlocks = SortBlock(Blocks[i]);
                 PhraseBlock phraseBlock = ReadPhrases(SortBlocks[0]);
@@ -69,7 +67,6 @@ namespace DialogueSystem
         private PhraseBlock ReadPhrases(XmlElement PhrasesBlock)
         {
             PhraseBlock phraseBlock = new PhraseBlock();
-            phraseBlock.Create();
 
             foreach (XmlElement PhraseNode in PhrasesBlock)
             {
@@ -85,7 +82,6 @@ namespace DialogueSystem
         private ChoiceBlock ReadChoices(XmlElement ChoicesBlock)
         {
             ChoiceBlock choiceBlock = new ChoiceBlock();
-            choiceBlock.Create();
 
             foreach (XmlElement ChoiceNode in ChoicesBlock)
             {
@@ -95,11 +91,11 @@ namespace DialogueSystem
                 {
                     if (ChoiceChildren.Name == "text")
                     {
-                        choice.AddPhraseID(ChoiceChildren.InnerText);
+                        choice.PhraseKey = ChoiceChildren.InnerText;
                     }
                     else
                     {
-                        choice.AddNextBlock(ChoiceChildren.InnerText);
+                        choice.NextBlock = ChoiceChildren.InnerText;
                     }
                 }
 

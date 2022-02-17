@@ -42,7 +42,7 @@ public class Section
     private string Name;
     private Queue<Parametr> Parametrs;
 
-    public void Create()
+    public Section()
     {
         Parametrs = new Queue<Parametr>();
     }
@@ -80,26 +80,6 @@ public class Section
 
 public class Parametr
 {
-    private string Name;
-    private string Value;
-
-    public void AddName(string name)
-    {
-        Name = name;
-    }
-
-    public void AddValue(string value)
-    {
-        Value = value;
-    }
-
-    public string GetName()
-    {
-        return Name;
-    }
-
-    public string GetValue()
-    {
-        return Value;
-    }
+    public string Name;
+    public string Value;
 }

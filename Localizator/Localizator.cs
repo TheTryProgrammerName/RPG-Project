@@ -12,12 +12,12 @@ public class Localizator : MonoBehaviour
 
     private XMLReader _XMLReader;
 
-    private List<Phrase> _phrasePool;
+    private List<Phrase> _phrasesList;
 
     public void Initialize()
     {
         _XMLReader = new XMLReader();
-        _phrasePool = new List<Phrase>();
+        _phrasesList = new List<Phrase>();
         GetFiles();
         ReadFiles();
     }
@@ -47,35 +47,35 @@ public class Localizator : MonoBehaviour
         {
             Phrase phrase = new Phrase();
 
-            phrase.id = Phrase.GetAttribute("id");
+            phrase.Key = Phrase.GetAttribute("id");
 
             foreach (XmlNode text in Phrase.ChildNodes)
             {
                 phrase.Text = text.InnerText;
             }
 
-            _phrasePool.Add(phrase);
+            _phrasesList.Add(phrase);
         }
     }
 
-    public string GetText(string id)
+    public string GetText(string key)
     {
-        for (int i = 0; i < _phrasePool.Count; i++)
+        for (int i = 0; i < _phrasesList.Count; i++)
         {
-            Phrase phrase = _phrasePool[i];
+            Phrase phrase = _phrasesList[i];
 
-            if (phrase.id == id)
+            if (phrase.Key == key)
             {
                 return phrase.Text;
             }
         }
 
-        return id;
+        return key;
     }
 }
 
 public class Phrase
 {
-    public string id;
+    public string Key;
     public string Text;
 }

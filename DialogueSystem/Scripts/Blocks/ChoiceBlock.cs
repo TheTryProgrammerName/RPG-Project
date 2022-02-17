@@ -9,7 +9,7 @@ namespace DialogueSystem
     {
         private Queue<Choice> Choices;
 
-        public void Create()
+        public ChoiceBlock()
         {
             Choices = new Queue<Choice>();
         }
@@ -27,27 +27,7 @@ namespace DialogueSystem
 
     public class Choice
     {
-        private string PhraseID;
-        private string NextBlock;
-
-        public void AddPhraseID(string phraseID)
-        {
-            PhraseID = phraseID;
-        }
-
-        public string GetPhraseID()
-        {
-            return PhraseID;
-        }
-
-        public void AddNextBlock(string nextBlock)
-        {
-            NextBlock = nextBlock;
-        }
-
-        public string GetNextBlock()
-        {
-            return NextBlock;
-        }
+        public string PhraseKey;
+        public string NextBlock;
     }
 }

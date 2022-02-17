@@ -1,29 +1,29 @@
 using System.Collections.Generic;
 
-//Блок фраз. Содержит ID фраз, по которым Localizator подставляет текст
+//Блок фраз. Содержит ключи фраз, по которым Localizator подставляет текст
 //Игра достаёт текст пока он не кончится
 //Потом переходит к ChoiceBlock'у
 namespace DialogueSystem
 {
     public class PhraseBlock
     {
-        private Queue<string> PhrasesID;
+        private Queue<string> PhrasesKeys;
 
-        public void Create()
+        public PhraseBlock()
         {
-            PhrasesID = new Queue<string>();
+            PhrasesKeys = new Queue<string>();
         }
 
         public void AddPhraseID(string ID)
         {
-            PhrasesID.Enqueue(ID);
+            PhrasesKeys.Enqueue(ID);
         }
 
         public string GetPhraseID()
         {
             if (GetPhrasesIDCount() > 0)
             {
-                return PhrasesID.Dequeue();
+                return PhrasesKeys.Dequeue();
             }
             else
             {
@@ -33,7 +33,7 @@ namespace DialogueSystem
 
         public int GetPhrasesIDCount()
         {
-            return PhrasesID.Count;
+            return PhrasesKeys.Count;
         }
     }
 }

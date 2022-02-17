@@ -9,7 +9,7 @@ namespace DialogueSystem
     {
         private Queue<DialogBlock> DialogBlocks;
 
-        public void Create()
+        public Dialog()
         {
             DialogBlocks = new Queue<DialogBlock>();
         }
@@ -32,7 +32,7 @@ namespace DialogueSystem
             {
                 DialogBlock dialogBlock = DialogBlocks.Dequeue();
 
-                if (dialogBlock.GetID() == ID)
+                if (dialogBlock.ID == ID)
                 {
                     return dialogBlock;
                 }

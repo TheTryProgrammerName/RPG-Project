@@ -20,7 +20,7 @@ namespace DialogueSystem
         private DialogBlock _dialogBlock;
         private PhraseBlock _phraseBlock;
 
-        private Utilits _utilits = new Utilits();
+        private Utilits _utilits;
 
         private bool _dialogueStarted;
 
@@ -29,6 +29,7 @@ namespace DialogueSystem
 
         public void Initialize()
         {
+            _utilits = new Utilits();
             _dialogReader = new DialogReader();
             LoadDialog("Dialog1.xml"); //Убрать это отсюда
             UIController.SetPreset("Dialog"); //Убрать это отсюда
@@ -77,8 +78,8 @@ namespace DialogueSystem
             {
                 Choice choice = Choices.Dequeue();
 
-                string ChoiceText = _localizator.GetText(choice.GetPhraseID());
-                string ChoiceLogic = choice.GetNextBlock();
+                string ChoiceText = _localizator.GetText(choice.PhraseKey);
+                string ChoiceLogic = choice.NextBlock;
 
                 ChoicesText.Enqueue(ChoiceText);
                 ChoicesLogic.Enqueue(ChoiceLogic);

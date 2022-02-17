@@ -4,25 +4,15 @@ namespace DialogueSystem
 {
     public class DialogBlock
     {
-        private string BlockID;
+        public string ID;
 
         private Queue<PhraseBlock> PhraseBlocks;
         private Queue<ChoiceBlock> ChoiceBlocks;
 
-        public void Create()
+        public DialogBlock()
         {
             PhraseBlocks = new Queue<PhraseBlock>();
             ChoiceBlocks = new Queue<ChoiceBlock>();
-        }
-
-        public void AddID(string ID)
-        {
-            BlockID = ID;
-        }
-
-        public string GetID()
-        {
-            return BlockID;
         }
 
         public void AddPhraseBlock(PhraseBlock AddedBlock)

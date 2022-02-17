@@ -92,7 +92,6 @@ public class LtxReader
         int SectionStringsCount = SectionStrings.Count;
 
         Section section = new Section();
-        section.Create();
 
         for (int i = 0; i < SectionStringsCount; i++)
         {
@@ -106,8 +105,8 @@ public class LtxReader
                 Parametr parametr = new Parametr();
                 string[] parametrString = SectionStrings.Dequeue().Split('=');
 
-                parametr.AddName(parametrString[0]);
-                parametr.AddValue(parametrString[1]);
+                parametr.Name = parametrString[0];
+                parametr.Value = parametrString[1];
 
                 section.AddParametr(parametr);
             }
